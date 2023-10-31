@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 const validarLogin = async (req, res) => {
   const { f_usuario, f_clave } = req.body;
 
+
   const response = await pool.query(
     'select * from "public".t_usuarios where f_usuario=$1',
     [f_usuario]
@@ -22,7 +23,7 @@ const validarLogin = async (req, res) => {
   }
 
   if (!(usuario && claveCorrecta)) {
-    response.status(401).json({
+    res.status(401).json({
       error: "Usuario o clave invalida",
     });
   } else {
