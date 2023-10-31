@@ -21,25 +21,27 @@ const router = Router();
 
 // router.put('/UpdateUbiacionesVsAlmacen/:id', UpdateUbiacionesVsAlmacen);
 
+//Login
+const { validarLogin } = require("../controllers/login.controller");
+router.post("/validarLogin", validarLogin);
+
+//Usuarios
+const { createUser } = require("../controllers/usuarios.controller");
+router.post("/createUser", createUser);
+
 //Micartera
 const {
   getMiCartera,
   setMiCartera,
-  ping
+  ping,
 } = require("../controllers/micartera.controller");
 router.get("/getMiCartera/:id", getMiCartera);
 router.get("/ping", ping);
 
 router.post("/setMiCartera", setMiCartera);
 
-
 //Activos
-const {
-  getActivos
-} = require("../controllers/activos.controller");
+const { getActivos } = require("../controllers/activos.controller");
 router.get("/getActivos/:id", getActivos);
-
-
-
 
 module.exports = router;
