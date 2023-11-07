@@ -1,0 +1,7 @@
+POST http://localhost:5000/validarLogin
+Content-Type: application/json
+
+{
+  "f_usuario": "yoex22",
+  "f_clave": "2525"
+}

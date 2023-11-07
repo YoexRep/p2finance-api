@@ -3,6 +3,16 @@ const pool = ConexionBD.GetBdPool();
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
+const ping = async (err, res) => {
+  const response = await pool.query("SELECT 1 as Result");
+  if (err) {
+    console.error("Error al hacer ping a la base de datos:", err);
+  } else {
+    console.log("Conexión exitosa a la base de datos");
+  }
+  res.json(response.rows);
+};
+
 const validarLogin = async (req, res) => {
   const { f_usuario, f_clave } = req.body;
 
@@ -49,4 +59,5 @@ const validarLogin = async (req, res) => {
 
 module.exports = {
   validarLogin,
+  ping
 };
