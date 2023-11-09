@@ -16,7 +16,7 @@ const ping = async (err, res) => {
 const validarLogin = async (req, res) => {
   const { f_usuario, f_clave } = req.body;
 
-
+ 
   const response = await pool.query(
     'select * from "public".t_usuarios where f_usuario=$1',
     [f_usuario]
