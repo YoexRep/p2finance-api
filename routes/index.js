@@ -16,14 +16,14 @@ const router = Router();
 // router.put('/UpdateUbiacionesVsAlmacen/:id', UpdateUbiacionesVsAlmacen);
 
 //General
-const { ping, createSecuencia, createIdioma, createElemento, createTraduccion } = require("../controllers/general.controller");
+const {ping, createSecuencia, createIdioma, createElemento, createTraduccion,getTraducciones } = require("../controllers/general.controller");
 router.get("/ping", ping);
 
 router.post("/createSecuencia", createSecuencia);
 router.post("/createIdioma", createIdioma);
 router.post("/createElemento", createElemento);
 router.post("/createTraduccion", createTraduccion);
-
+router.get('/getTraducciones', getTraducciones);
 
 //Login
 const { validarLogin } = require("../controllers/login.controller");

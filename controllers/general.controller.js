@@ -108,6 +108,15 @@ const createTraduccion = async (req, res) => {
   }
 };
 
+const getTraducciones = async (req, res) => {
+
+  const response = await pool.query('select * "public".t_traducciones '); 
+  res.status(200).json(response.rows); 
+
+
+}
+
+
 
 
 
@@ -121,5 +130,6 @@ module.exports = {
   createSecuencia,
   createIdioma,
   createElemento,
-  createTraduccion
+  createTraduccion,
+  getTraducciones
 };
