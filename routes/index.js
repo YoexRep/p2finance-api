@@ -15,15 +15,27 @@ const router = Router();
 // router.delete('/DeleteUbicaciones_vs_almacen/:id', DeleteUbicaciones_vs_almacen);
 // router.put('/UpdateUbiacionesVsAlmacen/:id', UpdateUbiacionesVsAlmacen);
 
-//Login
-const { ping, validarLogin } = require("../controllers/login.controller");
-router.post("/validarLogin", validarLogin);
+//General
+const { ping, createSecuencia, createIdioma, createElemento, createTraduccion } = require("../controllers/general.controller");
 router.get("/ping", ping);
+
+router.post("/createSecuencia", createSecuencia);
+router.post("/createIdioma", createIdioma);
+router.post("/createElemento", createElemento);
+router.post("/createTraduccion", createTraduccion);
+
+
+//Login
+const { validarLogin } = require("../controllers/login.controller");
+router.post("/validarLogin", validarLogin);
+
 
 //Usuarios
 const { verificarUser, createUser } = require("../controllers/usuarios.controller");
 router.post("/createUser", createUser);
 router.get('/verificarUser/:usu', verificarUser);
+
+
 
 
 module.exports = router;

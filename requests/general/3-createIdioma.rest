@@ -1,0 +1,9 @@
+POST http://localhost:5000/createIdioma
+Content-Type: application/json
+
+{
+  "f_idioma": "Inglés",
+  "f_activo": true
+}
+
+

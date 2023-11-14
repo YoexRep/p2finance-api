@@ -1,0 +1,11 @@
+POST http://localhost:5000/createTraduccion
+Content-Type: application/json
+
+{
+  "f_codigof_idioma": "IDI2",
+    "f_codigof_elemento": "ELE1",
+      "f_traduccion": "Login"
+  
+}
+
+
