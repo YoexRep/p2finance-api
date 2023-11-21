@@ -1,9 +1,0 @@
-POST http://localhost:5000/createElemento
-Content-Type: application/json
-
-{
-  "f_elemento": "BtnIniciarSession",
-  "f_activo": true
-}
-
-
