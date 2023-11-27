@@ -1,0 +1,8 @@
+POST http://localhost:5000/createPermiso
+Content-Type: application/json
+
+{
+  "f_permiso": "MenuActivos",
+  "f_estado": true
+
+}

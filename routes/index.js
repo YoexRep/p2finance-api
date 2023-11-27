@@ -27,12 +27,19 @@ const { validarLogin } = require("../controllers/login.controller");
 router.post("/validarLogin", validarLogin);
 
 
+
 //Usuarios
 const { verificarUser, createUser } = require("../controllers/usuarios.controller");
 router.post("/createUser", createUser);
 router.get('/verificarUser/:usu', verificarUser);
 
 
+//roles_permisos
+const { getPermisosRol, create_Rol_vs_Permiso, createPermiso, createRol } = require("../controllers/roles_permisos.controller");
+router.post("/createRol", createRol);
+router.post("/createPermiso", createPermiso);
+router.post("/create_Rol_vs_Permiso", create_Rol_vs_Permiso);
+router.get('/getPermisosRol/:rol', getPermisosRol);
 
 
 module.exports = router;

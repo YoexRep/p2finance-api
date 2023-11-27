@@ -2,28 +2,12 @@ POST http://localhost:5000/createSecuencia
 Content-Type: application/json
 
 {
-  "f_tabla": "t_traducciones",
-  "f_secuencia_string": "TRA",
+  "f_tabla": "t_permisos",
+  "f_secuencia_string": "PER",
   "f_secuencia_numerica": 0
 }
 
-# {
-#   "f_tabla": "t_elementos",
-#   "f_secuencia_string": "ELE",
-#   "f_secuencia_numerica": 0
-# }
 
-# {
-#   "f_tabla": "t_idiomas",
-#   "f_secuencia_string": "IDI",
-#   "f_secuencia_numerica": 0
-# }
-
-# {
-#   "f_tabla": "t_usuarios",
-#   "f_secuencia_string": "USU",
-#   "f_secuencia_numerica": 0
-# }
 
 
 

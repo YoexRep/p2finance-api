@@ -1,0 +1,7 @@
+POST http://localhost:5000/create_Rol_vs_Permiso
+Content-Type: application/json
+
+{
+  "f_codigof_rol": "ROL3",
+  "f_codigof_permiso": "PER2"
+}
