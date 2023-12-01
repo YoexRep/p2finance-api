@@ -2,8 +2,8 @@ POST http://localhost:5000/createSecuencia
 Content-Type: application/json
 
 {
-  "f_tabla": "t_permisos",
-  "f_secuencia_string": "PER",
+  "f_tabla": "t_roles",
+  "f_secuencia_string": "ROL",
   "f_secuencia_numerica": 0
 }
 

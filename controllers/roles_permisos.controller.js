@@ -49,7 +49,6 @@ const createPermiso = async (req, res) => {
   }
 };
 
-
 const create_Rol_vs_Permiso = async (req, res) => {
   const { f_codigof_rol, f_codigof_permiso } = req.body;
 
@@ -74,6 +73,32 @@ const create_Rol_vs_Permiso = async (req, res) => {
   }
 };
 
+const Limpiar_Rol_vs_Permiso = async (req, res) => {
+  const { f_codigof_rol } = req.body;
+ 
+  
+  try {
+    await pool.query('BEGIN');
+
+    // Eliminar todos los registros con el mismo f_codigof_rol
+    await pool.query(
+      'DELETE FROM "public".t_roles_vs_permisos WHERE f_codigof_rol = $1',
+      [f_codigof_rol]
+    );
+
+    
+    await pool.query('COMMIT');
+
+    res.status(200).json(response.rows);
+  } catch (e) {
+    await pool.query('ROLLBACK');
+    console.log(e);
+    res.status(400).json({ error: 'Ocurrió un error al procesar la solicitud' });
+  }
+};
+
+
+
 const getPermisosRol = async (req, res) => {
   const codigoRol = req.params.rol;
   const response = await pool.query('select rol.f_rol, per.f_permiso from "public".t_roles rol inner join "public".t_roles_vs_permisos rolVsPer on rol.f_codigo_rol = rolVsPer.f_codigof_rol inner join "public".t_permisos per on per.f_codigo_permiso = rolVsPer.f_codigof_permiso   where rol.f_codigo_rol =$1', [codigoRol]); 
@@ -93,5 +118,6 @@ module.exports = {
   createRol,
   createPermiso,
   create_Rol_vs_Permiso,
-  getPermisosRol
+  getPermisosRol,
+  Limpiar_Rol_vs_Permiso
 };

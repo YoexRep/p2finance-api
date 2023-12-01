@@ -35,11 +35,11 @@ router.get('/verificarUser/:usu', verificarUser);
 
 
 //roles_permisos
-const { getPermisosRol, create_Rol_vs_Permiso, createPermiso, createRol } = require("../controllers/roles_permisos.controller");
+const {Limpiar_Rol_vs_Permiso, getPermisosRol, create_Rol_vs_Permiso, createPermiso, createRol } = require("../controllers/roles_permisos.controller");
 router.post("/createRol", createRol);
 router.post("/createPermiso", createPermiso);
 router.post("/create_Rol_vs_Permiso", create_Rol_vs_Permiso);
 router.get('/getPermisosRol/:rol', getPermisosRol);
-
+router.delete('/Limpiar_Rol_vs_Permiso', Limpiar_Rol_vs_Permiso);
 
 module.exports = router;
